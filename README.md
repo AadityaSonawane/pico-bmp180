@@ -142,7 +142,7 @@ Just you need to follow few step ...
 
 3. Copy bmp180.c and bmp180.h into your existing project directory
 
-4. You may be need to modify your ```CMakeLists.txt``` (Such adding file bmp180.c code in section ```add_executable``` and add dependencies ```hardware_i2```c in section ```target_link_libraries``` )  
+4. You may be need to modify your ```CMakeLists.txt``` (Such adding file bmp180.c code in section ```add_executable``` and add dependencies ```hardware_i2c``` in section ```target_link_libraries``` )  
 
 5. Enjoy your coding!!! :) Good Luck!!!  
 
