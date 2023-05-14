@@ -58,6 +58,35 @@ SDA -------> GP4
 
 SCL -------> GP5
 
+# Basic code
+
+Minimum amount of code that able work with BMP180 sensor in Raspberry Pi Pico.
+
+Main code of usage example with BMP180 sensor for Raspberry PI Pico board. (You can look in main.c code file)
+
+```
+#include <stdio.h> /* Standard libary for printing the UART console */
+#include "pico/stdlib.h" /* Libary of PICO SDK C/C++ for support function for RPI PICO */
+#include "bmp180.h" /* Own header of BMP180 */
+
+int main() {
+
+    stdio_init_all(); /* Initialize that supporting printf standard function via UART interface */
+
+    i2c_init_bmp180(); /* Initialize I2C interface for BMP180 sensor */
+
+    for (;;) /* Infinite loops */ 
+    {
+        data_from_bmp180 current_data = get_bmp180_sensor_data(3); /* Get data from BMP180 sensor */
+        
+        printf("T: %.1f oC | Pressure: %.1f Pa \r\n", 
+                               current_data.air_temperature_in_celisus, 
+                               current_data.atmospheric_pressure_in_Pa); /* Print about data of BMP180 in UART console*/
+
+        sleep_ms(1000); /* Delay for 1000 ms */
+    }   
+}
+```
 # Building code (We used Linux Mint 21.1 OS)
 
 ## How get binary file for uploading your Raspberry Pi Pico
