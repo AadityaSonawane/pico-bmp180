@@ -112,7 +112,7 @@ So we enter 115200 and select serial port in main page of Putty software
 
 # How to create own projects with own libary BMP180
 
-## Creating empty project with BMP180 sensor library (As same building instruction above)
+## Creating empty project with BMP180 sensor library (As similary building instruction above)
 
 We used with instruction how create any project with using Pico C SDK. 
 
