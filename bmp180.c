@@ -49,10 +49,10 @@ uint8_t GET_DATA_RAW = 0xF6;
 void i2c_init_bmp180()
 {
     i2c_init(i2c_default, 1000 * 100); /* Initialize I2C interface with default port */
-    gpio_set_function(PICO_DEFAULT_I2C_SDA_PIN, GPIO_FUNC_I2C); /* Set GPIO function as I2C with default RPI Pico Pin for SDA I2C pin */
-    gpio_set_function(PICO_DEFAULT_I2C_SCL_PIN, GPIO_FUNC_I2C); /* Set GPIO function as I2C with default RPI Pico Pin for SCL I2C pin */
-    gpio_pull_up(PICO_DEFAULT_I2C_SDA_PIN); /* Set pull-up internal resistor of MCU for SDA pin */
-    gpio_pull_up(PICO_DEFAULT_I2C_SCL_PIN); /* Set pull-up internal resistor of MCU for SCL pin */
+    gpio_set_function(0, GPIO_FUNC_I2C); /* Set GPIO function as I2C with default RPI Pico Pin for SDA I2C pin */
+    gpio_set_function(1, GPIO_FUNC_I2C); /* Set GPIO function as I2C with default RPI Pico Pin for SCL I2C pin */
+    gpio_pull_up(0); /* Set pull-up internal resistor of MCU for SDA pin */
+    gpio_pull_up(1); /* Set pull-up internal resistor of MCU for SCL pin */
 }
 /**
  * @brief Receive data from BMP180 sensor with air temperature and atmosphere pressure

@@ -8,18 +8,9 @@ set(CMAKE_CXX_STANDARD 17)
 
 pico_sdk_init()
 
-add_executable(pico_bmp180
-    main.c
-    bmp180.c
-)
+add_library(pico_bmp180 STATIC bmp180.c)
 
-pico_enable_stdio_usb(pico_bmp180 1)
-pico_enable_stdio_uart(pico_bmp180 1)
-
-pico_add_extra_outputs(pico_bmp180)
-
-target_include_directories(pico_bmp180 PRIVATE ${CMAKE_CURRENT_LIST_DIR} )
-
+target_include_directories(pico_bmp180 PUBLIC ${CMAKE_CURRENT_LIST_DIR} )
 
 target_link_libraries(pico_bmp180 
     pico_stdlib
