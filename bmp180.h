@@ -40,7 +40,7 @@ typedef struct data_from_bmp180
 /**
  * @brief Function of I2C interface initialization for BMP180 (Default I2C port in RPI PICO)
 */
-void i2c_init_bmp180();
+void init_bmp180();
 
 /**
  * @brief Function that retrieve temperature and pressure from BMP180 sensor 

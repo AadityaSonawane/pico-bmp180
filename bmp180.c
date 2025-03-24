@@ -46,7 +46,7 @@ uint8_t GET_DATA_RAW = 0xF6;
  * If you already initialized default port I2C interface for another application, so you don't need to add function i2c_init_bmp180
  * I2C default port is i2c0
 */
-void i2c_init_bmp180()
+void init_bmp180()
 {
     i2c_init(i2c_default, 1000 * 100); /* Initialize I2C interface with default port */
     gpio_set_function(0, GPIO_FUNC_I2C); /* Set GPIO function as I2C with default RPI Pico Pin for SDA I2C pin */
